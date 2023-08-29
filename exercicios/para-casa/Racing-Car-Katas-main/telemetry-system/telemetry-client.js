@@ -54,8 +54,6 @@ class TelemetryClient {
             `;
       return;
     }
-
-    // Implementar a operação real de envio (não necessária para este exercício)
   }
 
   receive() {
