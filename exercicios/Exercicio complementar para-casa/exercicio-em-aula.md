@@ -21,7 +21,7 @@ class Product {
 ```
 Refatore-a de maneira a respeitar o princípio da Responsabilidade Única. Crie outras classes se necessário.
 
-2. Considere o código (em Typescript) abaixo:
+2. Considere o código abaixo:
 ```
 export enum ResourceType {
     TIME_SLOT,
@@ -32,7 +32,7 @@ class Resource {
     id: number;
     type: ResourceType;
 
-    constructor(id: number, type: ResourceType) {
+    constructor(id, type) {
       this.id = id;
       this.type = type;
     }
@@ -40,7 +40,7 @@ class Resource {
 
 class ResourceAllocator {    
   
-    allocate(resource: Resource) {
+    allocate(resource) {
         switch (resource.type) {
             case ResourceType.TIME_SLOT:
                 this.findFreeTimeSlot();
@@ -55,7 +55,7 @@ class ResourceAllocator {
         }
     }
 
-    free(resource: Resource) {
+    free(resource) {
         switch (resource.type) {
             case ResourceType.TIME_SLOT:
                 this.markTimeSlotFree(resource.id);
@@ -68,32 +68,32 @@ class ResourceAllocator {
         }
     }
 
-    private findFreeSpaceSlot()
+     findFreeSpaceSlot()
     {
         console.log("Encontrei um espaço livre");
     }
 
-    private findFreeTimeSlot()
+     findFreeTimeSlot()
     {
         console.log("Encontrei um tempo livre");
     }
 
-    private markSpaceSlotFree(resourceId: number)
+     markSpaceSlotFree(resourceId)
     {
         console.log("Encontrei um espaço ocupado");
     }
 
-    private markTimeSlotFree(resourceId: number)
+    private markTimeSlotFree(resourceId)
     {
         console.log("Liberei um tempo ocupado");
     }
 
-    private markSpaceSlotBusy(resourceId: number)
+     markSpaceSlotBusy(resourceId)
     {
         console.log("Ocupei um espaço livre");
     }
 
-    private markTimeSlotBusy(resourceId: number)
+     markTimeSlotBusy(resourceId)
     {
         console.log("Ocupei um tempo livre");
     }
@@ -101,7 +101,7 @@ class ResourceAllocator {
 ```
 Refatore o código de maneira a respeitar o princípio Aberto-Fechado. Crie outras classes se necessário.
 
-3. Considere o código (em Typescript) abaixo
+3. Considere o código abaixo
 ```
 class Duck {
     quack() {
@@ -115,7 +115,7 @@ class Duck {
 
 class ElectronicDuck extends Duck
 {
-    private _on: boolean;
+    private _on;
 
     constructor() {
         super();
@@ -176,22 +176,22 @@ pool.run();
 ```
 Refatore o código de maneira a respeitar o princípio da Substituição de Liskov. Crie outras classes se  necessário.
 
-4. Considere o código (em Typescript) abaixo
+4. Considere o código abaixo
 ```
 interface Worker
 {
-    work() : String;
-    eat() : String;
+    work();
+    eat();
 }
 
 class Human extends Worker
 {
-    work() : String
+    work() 
     {
         return "Human works";
     }
 
-    eat() : String
+    eat() 
     {
         return "Human eats";
     }
@@ -199,12 +199,12 @@ class Human extends Worker
 
 class Robot extends Worker
 {
-    work() : String 
+    work()  
     {
         return "Robot works";
     }
 
-    eat() : String 
+    eat()  
     {
         throw new Error("Robot can't eat");
     }
@@ -244,7 +244,7 @@ class Factory
 ```
 Refatore o código de maneira a respeitar o princípio da Segregação de Interface. Crie outras classes se  necessário.
 
-5. Considere o código (em Typescript) abaixo
+5. Considere o código abaixo
 ```
 class Lamp
 {

@@ -1,6 +1,5 @@
 # Exercício de Casa 🏠 
 
-## Nome do Exercicio
 
 - Explicação do exercício: 
 [Refatorar o projeto com os príncipios explicados em aula] 
